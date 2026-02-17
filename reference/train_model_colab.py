@@ -1,19 +1,3 @@
-# =============================================================================
-# ChargeGPT — Transformer Model + Training (Run in Google Colab)
-# =============================================================================
-#
-# INSTRUCTIONS FOR GOOGLE COLAB:
-#
-# Cell 1: Make sure battery_data.csv exists (from the data generation step)
-# Cell 2: Paste this entire script and run
-# Cell 3: Download the model files:
-#          from google.colab import files
-#          files.download("chargegpt_model.pth")
-#          files.download("scaler.pkl")
-#          files.download("training_history.png")
-#
-# =============================================================================
-
 import numpy as np
 import pandas as pd
 import torch
@@ -279,7 +263,7 @@ def train_model(model, train_loader, val_loader, epochs=EPOCHS):
     criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=1e-5)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.5, patience=5, verbose=True
+        optimizer, mode='min', factor=0.5, patience=5
     )
 
     # Training history
