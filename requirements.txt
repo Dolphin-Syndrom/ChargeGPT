@@ -1,0 +1,8 @@
+numpy
+pandas
+torch
+scikit-learn
+langchain
+langchain-google-genai
+streamlit
+matplotlib
